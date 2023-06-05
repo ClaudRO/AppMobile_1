@@ -1,0 +1,51 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Registro de Usuario: </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <form  #form="ngForm" (ngSubmit)="register(form)">
+    <ion-grid>
+      <ion-row color="primary" justify-content-center>
+        <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+          <div text-center>
+            <h3 style="color: white;">Crea tu cuenta: </h3>
+          </div>
+          <div padding>
+            <ion-item>
+              <ion-input  name="name" type="text" placeholder="Nombre" ngModel required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input  name="apellido" type="text" placeholder="Apellido" ngModel required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input  name="fecha" type="date" placeholder="fecha de nacimiento" ngModel required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input name="email" type="email" placeholder="tu@email.com" ngModel required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input name="password" type="password" placeholder="contraseña" ngModel required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input name="confirm" type="password" placeholder="repetir contraseña" ngModel required></ion-input>
+            </ion-item>
+          </div>
+          <div padding>
+            <ion-button  size="large" type="submit" [disabled]="form.invalid" expand="block" routerLink="/login">Registrarse</ion-button>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+
+   
+  <ion-checkbox >¿Esta deacuedo con las condiciones ?</ion-checkbox>
+    
+  
+
+</ion-content>

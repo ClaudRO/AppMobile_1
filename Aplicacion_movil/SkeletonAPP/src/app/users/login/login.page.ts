@@ -12,4 +12,7 @@ export class LoginPage implements OnInit {
   ngOnInit() {
   }
 
+  login(form: any) {
+    // Aquí puedes agregar la lógica para procesar el inicio de sesión
+  }
 }

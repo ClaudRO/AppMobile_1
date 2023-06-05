@@ -1,0 +1,70 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+      <ion-title style="display: flex; align-items: center;">Nueva Transaccion:</ion-title>
+      <ion-button fill="clear" style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%);">
+        
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-item>
+  <ion-button fill="clear" style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%);" (click)="showSearchField = true">
+    <ion-item *ngIf="showSearchField">
+      <ion-input type="text" placeholder="Buscar producto"></ion-input>
+    </ion-item>
+    <ion-icon name="search-circle-outline" style="font-size: 24px;"></ion-icon>
+      
+    </ion-button>
+  </ion-item>
+  <ion-grid>
+    <ion-title style="padding: 10px; color: white; font-style: inherit; font-size: 30px;text-align: center;">Productos seleccionados: </ion-title>
+    <ion-row>
+      <ion-col>
+        
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>{{productoejemplo}}</ion-card-title>
+          </ion-card-header>
+        
+          <ion-card-content>
+            {{desejemplo}}
+          </ion-card-content>
+          <ion-item>
+            <ion-label>Cantidad:</ion-label>
+            <ion-input type="number" [(ngModel)]="cantidadProducto" min="0"></ion-input>
+            <ion-buttons slot="end">
+              <ion-button (click)="decrementarCantidad()"><ion-icon name="remove"></ion-icon></ion-button>
+              <ion-button (click)="incrementarCantidad()"><ion-icon name="add"></ion-icon></ion-button>
+            </ion-buttons>
+          </ion-item>
+          <ion-item>
+            <ion-label>Precio c/u:</ion-label>
+            <ion-input type="number" [(ngModel)]="precioProducto" min="0"></ion-input>
+
+          </ion-item>
+          
+        </ion-card>
+        <ion-button expand="full" >agregar otro producto</ion-button>
+    </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid>
+    <ion-title style="padding: 10px; color: white; font-style: inherit; font-size: 30px;text-align: center;">Proveedores: </ion-title>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-select label="Proveedores" label-placement="Proveedores" fill="solid">
+            <ion-select-option value="Raul mata">Raul mata</ion-select-option>
+            <ion-select-option value="Batman banana">Batman banana</ion-select-option>
+            <ion-select-option value="salvame orange">salvame orange</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-button expand="full" (click)="guardarDatos()">Guardar Transaccion</ion-button>
+      </ion-col>  
+    </ion-row>
+  </ion-grid>
+  
+</ion-content>
