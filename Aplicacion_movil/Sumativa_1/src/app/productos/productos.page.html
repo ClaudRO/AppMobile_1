@@ -6,40 +6,28 @@
     <ion-title>Productos</ion-title>
   </ion-toolbar>
 </ion-header>
+
 <ion-content>
   <ion-card>
     <ion-card-header>
       <ion-card-title>Productos agregados</ion-card-title>
     </ion-card-header>
     <ion-card-content>
-      <ion-list>
-        <ion-item>
-          <ion-thumbnail slot="start">
-            <img alt="Silhouette of mountains" src="https://media.istockphoto.com/id/1289009101/es/foto/fruta-fresca-de-pepino.jpg?s=612x612&w=0&k=20&c=jS4qFgCFUDxvaVxSRnYGvpOJGbIER5lwfsVJgJtQ364=" />
-          </ion-thumbnail>
-          <ion-label>Pepino</ion-label>
-          <ion-button expand="full" routerLink="/detalle-producto">ver detalle</ion-button>
-        </ion-item>
-  
-        <ion-item>
-          <ion-thumbnail slot="start">
-            <img alt="Silhouette of mountains" src="https://media.istockphoto.com/id/1289009101/es/foto/fruta-fresca-de-pepino.jpg?s=612x612&w=0&k=20&c=jS4qFgCFUDxvaVxSRnYGvpOJGbIER5lwfsVJgJtQ364=" />
-          </ion-thumbnail>
-          <ion-label>Pepinosegunda</ion-label>
-          <ion-button expand="full" routerLink="/detalle-producto">ver detalle</ion-button>
+      <ion-item>
+        <ion-input expand="full" type="text" placeholder="El producto que buscas" [(ngModel)]="searchText"></ion-input>
+        <ion-icon name="search-circle-outline" slot="end" style="font-size: 24px;"></ion-icon>
+      </ion-item>
 
-        </ion-item>
-  
-        <ion-item lines="none">
+      <ion-list>
+        <ion-item *ngFor="let p of filterProductos()" [routerLink]="['/detail-producto', p.id]">
           <ion-thumbnail slot="start">
-            <img alt="Silhouette of mountains" src="https://www.lavanguardia.com/files/og_thumbnail/uploads/2018/09/17/5e997d878f25e.jpeg" />
+            <img alt="Silhouette of mountains" src="../../assets/static/palta.jpg" />
           </ion-thumbnail>
-          <ion-label>Tuna</ion-label>
-          <ion-button expand="full" routerLink="/detalle-producto">ver detalle</ion-button>
+          <ion-label>{{ p.nombre }}</ion-label>
         </ion-item>
       </ion-list>
     </ion-card-content>
   </ion-card>
-  <ion-button expand="full" routerLink="/producto">Nuevo producto</ion-button>
-  
+
+  <ion-button expand="full" routerLink="/add-producto">Nuevo producto</ion-button>
 </ion-content>

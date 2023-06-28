@@ -9,7 +9,9 @@ ion-menu.md ion-content {
   --padding-top: 20px;
   --padding-bottom: 20px;
 }
-
+ion-menu {
+  --ion-menu-width: 100%; // Establece el ancho del side menu al 100% del ancho de la pantalla
+}
 ion-menu.md ion-list {
   padding: 20px 0;
 }

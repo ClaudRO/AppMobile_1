@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Iusuario } from 'src/app/interfaces/iusuario';
+import { SUsuariosService } from 'src/app/services/s-usuarios.service';
 
 @Component({
   selector: 'app-register',
@@ -6,12 +8,28 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./register.page.scss'],
 })
 export class RegisterPage implements OnInit {
+  newUsuario: Iusuario={
+    nombre:"",
+    apellido:"",
+    contrasenia:"",
+    fechaDeNacimiento: new Date(1998, 11, 23),
+    tipo_usuario:"",
+    correo:"",
+    numeroCelular:NaN,
+    
 
-  constructor() { }
+  }
+  constructor(private servicioUser:SUsuariosService) {}
 
   ngOnInit() {
   }
-  register(form: any) {
-    // Aquí puedes agregar la lógica para procesar el registro de usuario
+  crearUsuario(){
+    this.servicioUser.crearUsuario(this.newUsuario).subscribe()
   }
 }
+
+
+  
+  
+
+

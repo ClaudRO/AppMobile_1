@@ -1,0 +1,26 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Detalle Producto</ion-title>
+    <ion-buttons slot="end">
+      <ion-back-button text="atras"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>ID #{{producto.id}}</ion-card-subtitle>
+      <ion-card-title>{{producto.nombre}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <strong>{{producto.descripcion}} </strong>
+    </ion-card-content>
+    <ion-button [routerLink]="['/update-producto',producto.id]" color="warning"><ion-icon name="create"></ion-icon></ion-button>
+    <ion-button [routerLink]="['/delete-producto',producto.id]"color="danger"><ion-icon name="trash"></ion-icon></ion-button>
+
+  </ion-card>
+</ion-content>

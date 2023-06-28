@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Agregar Producto</ion-title>
+    <ion-buttons slot="end">
+      <ion-back-button text="atras"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <form>
+    <ion-item lines="full">
+      <ion-label position="floating">Nombre del producto: </ion-label>
+      <ion-input required [(ngModel)]="newProducto.nombre" name="nombre"></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Descripcion del producto: </ion-label>
+      <ion-input required  [(ngModel)]="newProducto.descripcion" name="descripcion"></ion-input>
+    </ion-item>
+    <ion-row>
+      <ion-col>
+        <ion-button (click)="crearProducto()" expand="block" color="success" routerLink="/productos">Agregar</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>

@@ -7,8 +7,7 @@
   </ion-toolbar>
 </ion-header>
 <ion-content padding>
-
-  <form #form="ngForm" (ngSubmit)="login(form)">
+  <form #form="ngForm" (ngSubmit)="login()">
     <ion-grid>
       <ion-row color="primary" justify-content-center>
         <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
@@ -17,21 +16,26 @@
           </div>
           <div padding>
             <ion-item>
-              <ion-input name="email" type="email" placeholder="tu@email.com" ngModel required></ion-input>
+              <ion-label position="floating">Correo electrónico</ion-label>
+              <ion-input name="email" type="email" placeholder="tu@email.com"
+                [(ngModel)]="credenciales.correo" required></ion-input>
             </ion-item>
             <ion-item>
-              <ion-input name="password" type="password" placeholder="Contraseña" ngModel required></ion-input>
+              <ion-label position="floating">Contraseña</ion-label>
+              <ion-input name="password" type="password" placeholder="Contraseña"
+                [(ngModel)]="credenciales.contrasenia" required></ion-input>
             </ion-item>
           </div>
           <div padding>
-            <ion-button size="large" expand="block" type="submit" routerLink="/inicio" [disabled]="form.invalid">Acceder</ion-button>
+            <ion-button size="large" expand="block" type="submit" >
+              Acceder
+            </ion-button>
           </div>
         </ion-col>
       </ion-row>
     </ion-grid>
   </form>
   <div id="container">
-    <p style="color: white; font-size: large;">¿No te has registrado aun?<a href="register" style="padding: 5px;">Registrarse</a></p>
+    <p style="color: white; font-size: large;">¿No te has registrado aún?<a href="register" style="padding: 5px;">Registrarse</a></p>
   </div>
-  
 </ion-content>

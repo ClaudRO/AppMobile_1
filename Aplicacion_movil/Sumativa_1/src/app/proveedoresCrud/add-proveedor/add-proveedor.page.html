@@ -1,0 +1,31 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Agregar Proveedor</ion-title>
+    <ion-buttons slot="end">
+      <ion-back-button text="atras"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <form>
+    <ion-item lines="full">
+      <ion-label position="floating">Nombre del proveedor: </ion-label>
+      <ion-input required [(ngModel)]="newProveedor.nombre" name="nombre"></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Descripcion del proveedor: </ion-label>
+      <ion-input required  [(ngModel)]="newProveedor.descripcion" name="descripcion"></ion-input>
+    </ion-item>
+    
+    <ion-row>
+      <ion-col>
+        <ion-button (click)="crearProveedor()" expand="block" color="success" routerLink="/provedores">Agregar</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>

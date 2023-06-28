@@ -4,49 +4,37 @@
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>Mis datos</ion-title>
+    <ion-buttons slot="end">
+      <ion-back-button text="atras"></ion-back-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 <ion-content>
   <ion-list>
     <ion-item>
       <ion-label>Nombre:</ion-label>
-      <ion-text>{{ usuarioejemplo[0] }}</ion-text>
-   
-      <ion-button *ngIf="mostrarBotones"><ion-icon name="create"></ion-icon></ion-button>
-
+      <ion-input [(ngModel)]="usuario.nombre" [readonly]="!mostrarBotones"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label>Apellido:</ion-label>
-      <ion-text>{{ usuarioejemplo[1] }}</ion-text>
-      <ion-button *ngIf="mostrarBotones"><ion-icon name="create"></ion-icon></ion-button>
-
+      <ion-input [(ngModel)]="usuario.apellido" [readonly]="!mostrarBotones"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label>Fecha de nacimiento:</ion-label>
-      <ion-text>{{ usuarioejemplo[2] }}</ion-text>
-      <ion-button *ngIf="mostrarBotones"><ion-icon name="create"></ion-icon></ion-button>
-
+      <ion-input [(ngModel)]="usuario.fechaDeNacimiento" [readonly]="!mostrarBotones"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label>Email:</ion-label>
-      <ion-text>{{ usuarioejemplo[3] }}</ion-text>
-      <ion-button *ngIf="mostrarBotones"><ion-icon name="create"></ion-icon></ion-button>
-
+      <ion-input [(ngModel)]="usuario.correo" [readonly]="!mostrarBotones"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label>Contraseña:</ion-label>
-      
-      <ion-text>{{ usuarioejemplo[4] }}</ion-text>
-      <ion-button *ngIf="mostrarBotones"><ion-icon name="create"></ion-icon></ion-button>
-      
+      <ion-input [(ngModel)]="usuario.contrasenia" [readonly]="!mostrarBotones"></ion-input>
     </ion-item>
     <!-- Agrega más elementos de lista según tus datos -->
   </ion-list>
   <div class="button-container">
-  <ion-button (click)="toggleEdicion()">Editar</ion-button>
-  
-  <ion-button *ngIf="mostrarBotones" (click)="confirmarCambios()">Confirmar cambios</ion-button>
+    <ion-button (click)="toggleEdicion()">Editar</ion-button>
+    <ion-button *ngIf="mostrarBotones" (click)="confirmarCambios()">Confirmar cambios</ion-button>
   </div>
-  
 </ion-content>
-

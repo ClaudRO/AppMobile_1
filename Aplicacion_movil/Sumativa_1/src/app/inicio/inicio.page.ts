@@ -1,25 +1,34 @@
 import { Component, OnInit } from '@angular/core';
+import { CredencialesInicioService } from '../../services/credenciales-inicio.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-inicio',
   templateUrl: './inicio.page.html',
   styleUrls: ['./inicio.page.scss'],
 })
-export class InicioPage implements OnInit {
-  Nombre_usuario : string = "Juan Jorge Canales Soto";
-  isWeekday = (dateString: string) => {
-    const date = new Date(dateString);
-    const utcDay = date.getUTCDay();
+export class InicioPage{
+  NombreUsuario: string = '';
+  id:Number=NaN
 
-    /**
-     * Date will be enabled if it is not
-     * Sunday or Saturday
-     */
-    return utcDay !== 0 && utcDay !== 6;
-  };
-  constructor() { }
+  constructor(private credencialesService: CredencialesInicioService, private router:Router) { }
 
-  ngOnInit() {
+  
+
+  ionViewWillEnter() {
+    this.obtenerCredenciales();
   }
-  fechas : string[]=["2023-07-07,2023-08-08"];
+  
+  obtenerCredenciales() {
+    this.NombreUsuario = this.credencialesService.getNombreUsuario();
+    this.id= this.credencialesService.getIdUsuario(); // Corrección aquí
+  }
+
+  logout() {
+    this.credencialesService.setCredenciales("", ""); // Limpiar las credenciales
+    this.credencialesService.setNombreUsuario(""); // Limpiar el nombre de usuario
+    this.NombreUsuario = ''; // Limpiar la variable en el componente
+    this.id=NaN;
+    this.router.navigate(['/login']);
+  }
 }

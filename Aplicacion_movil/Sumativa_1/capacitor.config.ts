@@ -5,8 +5,9 @@ const config: CapacitorConfig = {
   appName: 'SkeletonAPP',
   webDir: 'www',
   server: {
-    androidScheme: 'https'
+    androidScheme: 'http'
   }
 };
 
 export default config;
+

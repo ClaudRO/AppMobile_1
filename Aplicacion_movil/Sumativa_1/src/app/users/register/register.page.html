@@ -8,7 +8,7 @@
 </ion-header>
 
 <ion-content >
-  <form  #form="ngForm" (ngSubmit)="register(form)">
+  <form>
     <ion-grid>
       <ion-row color="primary" justify-content-center>
         <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
@@ -16,31 +16,38 @@
             <h3 style="color: white;">Crea tu cuenta: </h3>
           </div>
           <div padding>
-            <ion-item>
-              <ion-input  name="name" type="text" placeholder="Nombre" ngModel required></ion-input>
+            <ion-item lines="full">
+              <ion-input  name="name" type="text" placeholder="Nombre" required [(ngModel)]="newUsuario.nombre"></ion-input>
             </ion-item>
             <ion-item>
-              <ion-input  name="apellido" type="text" placeholder="Apellido" ngModel required></ion-input>
+              <ion-input  name="apellido" type="text" placeholder="Apellido" required [(ngModel)]="newUsuario.apellido"></ion-input>
             </ion-item>
             <ion-item>
-              <ion-input  name="fecha" type="date" placeholder="fecha de nacimiento" ngModel required></ion-input>
+              <ion-input  name="fecha" type="date" placeholder="fecha de nacimiento"required [(ngModel)]="newUsuario.fechaDeNacimiento"></ion-input>
             </ion-item>
             <ion-item>
-              <ion-input name="email" type="email" placeholder="tu@email.com" ngModel required></ion-input>
+              <ion-input name="email" type="email" placeholder="tu@email.com" required [(ngModel)]="newUsuario.correo"></ion-input>
             </ion-item>
             <ion-item>
-              <ion-input name="password" type="password" placeholder="contraseña" ngModel required></ion-input>
+              <ion-input name="password" type="password" placeholder="contraseña" required [(ngModel)]="newUsuario.contrasenia"></ion-input>
             </ion-item>
             <ion-item>
-              <ion-input name="confirm" type="password" placeholder="repetir contraseña" ngModel required></ion-input>
+              <ion-input name="tipoUsuario" type="text" placeholder="tipo de usuario" required [(ngModel)]="newUsuario.tipo_usuario" ></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input name="number" type="number" placeholder="celular" required [(ngModel)]="newUsuario.numeroCelular" ></ion-input>
             </ion-item>
           </div>
-          <div padding>
-            <ion-button  size="large" type="submit" [disabled]="form.invalid" expand="block" routerLink="/login">Registrarse</ion-button>
-          </div>
+         
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+            <ion-button (click)="crearUsuario()" expand="block" color="success" routerLink="/login">Registrarse</ion-button>
         </ion-col>
       </ion-row>
     </ion-grid>
+    
   </form>
 
    

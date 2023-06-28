@@ -1,0 +1,27 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Detalle Proveedor</ion-title>
+    <ion-buttons slot="end">
+      <ion-back-button text="atras"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>ID #{{proveedor.id}}</ion-card-subtitle>
+      <ion-card-title>{{proveedor.nombre}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <strong>{{proveedor.descripcion}} </strong>
+    </ion-card-content>
+    <ion-button [routerLink]="['/update-proveedor',proveedor.id]" color="warning"><ion-icon name="create"></ion-icon></ion-button>
+    <ion-button [routerLink]="['/delete-proveedor',proveedor.id]"color="danger">><ion-icon name="trash"></ion-icon></ion-button>
+
+  </ion-card>
+</ion-content>
+

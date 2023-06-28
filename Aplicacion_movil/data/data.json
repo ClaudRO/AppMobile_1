@@ -1,0 +1,381 @@
+{
+  "proveedores": [
+    {
+      "id": 1,
+      "nombre": "Juan Casto",
+      "descripcion": "amigo de punitaqui"
+    },
+    {
+      "id": 2,
+      "nombre": "Cecia Jorquera",
+      "descripcion": "Dueña del fundo los Naranjos"
+    },
+    {
+      "id": 4,
+      "nombre": "Proveedor carlosss",
+      "descripcion": "uvas y mas"
+    },
+    {
+      "nombre": "Cuadrame",
+      "descripcion": "El temario",
+      "id": 5
+    },
+    {
+      "idUsuario": 3,
+      "nombre": "PuradobleP",
+      "descripcion": "yYaNosVeran",
+      "id": 6
+    },
+    {
+      "idUsuario": 3,
+      "nombre": "maximo decimo meridio",
+      "descripcion": "comandante de los ejercitos del norte, leal servidor del verdaro emperador marco aurelio",
+      "id": 7
+    },
+    {
+      "id": 8,
+      "idUsuario": 1,
+      "nombre": "Productor poco especial secreto internacional fungico",
+      "descripcion": "Descripcion sobra"
+    },
+    {
+      "idUsuario": 1,
+      "nombre": "provedorprueba",
+      "descripcion": "Descripcion Nueva",
+      "id": 9
+    },
+    {
+      "idUsuario": 1,
+      "nombre": "hkhkh",
+      "descripcion": "",
+      "id": 10
+    },
+    {
+      "idUsuario": 1,
+      "nombre": "pencil",
+      "descripcion": "",
+      "id": 11
+    }
+  ],
+  "productos": [
+    {
+      "id": 1,
+      "nombre": "Pepino de primerasssssssssssssssssssss ",
+      "descripcion": "Los pepinos mas grandes y dulces"
+    },
+    {
+      "id": 2,
+      "nombre": "Pepino de segunda",
+      "descripcion": "Estos pepinos son medianos y su dulzura varia"
+    },
+    {
+      "id": 3,
+      "nombre": "Platano Oriental",
+      "descripcion": "Da alergia, especie invasora"
+    },
+    {
+      "nombre": "productodeejemplo",
+      "descripcion": "Descripcion Nueva",
+      "id": 5
+    },
+    {
+      "nombre": "amg",
+      "descripcion": "clase amg",
+      "cantidad": 0,
+      "valor": 0,
+      "id": 6
+    },
+    {
+      "idUsuario": 3,
+      "nombre": "moviendobieneLiCE",
+      "descripcion": "soymaleanteyesloquehay",
+      "cantidad": 0,
+      "valor": 0,
+      "id": 7
+    },
+    {
+      "idUsuario": 3,
+      "nombre": "toquedequeda",
+      "descripcion": "variostiroteos",
+      "cantidad": 0,
+      "valor": 0,
+      "id": 8
+    },
+    {
+      "id": 11,
+      "idUsuario": 1,
+      "nombre": "elveranoojalanodesaprezca",
+      "descripcion": "MAScarodelahistoria",
+      "cantidad": 0,
+      "valor": 0
+    },
+    {
+      "idUsuario": 1,
+      "nombre": "maximodecimomeridio",
+      "descripcion": "comandante",
+      "cantidad": 0,
+      "valor": 0,
+      "id": 12
+    },
+    {
+      "idUsuario": 1,
+      "nombre": "mercedez",
+      "descripcion": "amg clase g 63",
+      "cantidad": 0,
+      "valor": 0,
+      "id": 13
+    },
+    {
+      "idUsuario": 1,
+      "nombre": "productoprueba",
+      "descripcion": "eesteproductoesdeprueba",
+      "cantidad": 0,
+      "valor": 0,
+      "id": 14
+    },
+    {
+      "idUsuario": 1,
+      "nombre": "prueba5",
+      "descripcion": "",
+      "cantidad": 0,
+      "valor": 0,
+      "id": 15
+    },
+    {
+      "idUsuario": 1,
+      "nombre": "pareceequealgopas",
+      "descripcion": "asies",
+      "cantidad": 0,
+      "valor": 0,
+      "id": 16
+    },
+    {
+      "idUsuario": 1,
+      "nombre": "caeste",
+      "descripcion": "",
+      "cantidad": 0,
+      "valor": 0,
+      "id": 17
+    }
+  ],
+  "transacciones": [
+    {
+      "idUsuario": 1,
+      "fecha": "2023-06-27T04:51:24.309Z",
+      "proveedor": "Productor especial secreto internacional fungico",
+      "productos": [
+        {
+          "id": 11,
+          "idUsuario": 1,
+          "nombre": "elverano",
+          "descripcion": "MAScarodelahistoria",
+          "cantidad": 2,
+          "valor": 200000
+        },
+        {
+          "id": 12,
+          "idUsuario": 1,
+          "nombre": "maximodecimomeridio",
+          "descripcion": "comandante",
+          "cantidad": 10,
+          "valor": 100000
+        }
+      ],
+      "id": 6
+    },
+    {
+      "idUsuario": 1,
+      "fecha": "2023-06-27T04:57:44.120Z",
+      "proveedor": "Productor especial secreto internacional fungico",
+      "productos": [
+        {
+          "id": 11,
+          "idUsuario": 1,
+          "nombre": "elverano",
+          "descripcion": "MAScarodelahistoria",
+          "cantidad": 1,
+          "valor": 7000000
+        },
+        {
+          "id": 13,
+          "idUsuario": 1,
+          "nombre": "mercedez",
+          "descripcion": "amg clase g 63",
+          "cantidad": 10,
+          "valor": 150000
+        }
+      ],
+      "id": 7
+    },
+    {
+      "idUsuario": 3,
+      "fecha": "2023-06-27T04:59:33.760Z",
+      "proveedor": "PuradobleP",
+      "productos": [
+        {
+          "id": 7,
+          "idUsuario": 3,
+          "nombre": "moviendobieneLiCE",
+          "descripcion": "soymaleanteyesloquehay",
+          "cantidad": 3000,
+          "valor": 1800000
+        },
+        {
+          "id": 8,
+          "idUsuario": 3,
+          "nombre": "toquedequeda",
+          "descripcion": "variostiroteos",
+          "cantidad": 1,
+          "valor": 200000
+        }
+      ],
+      "id": 8
+    },
+    {
+      "idUsuario": 1,
+      "fecha": "2023-06-28T00:46:18.039Z",
+      "proveedor": "Productor poco especial secreto internacional fungico",
+      "productos": [
+        {
+          "id": 11,
+          "idUsuario": 1,
+          "nombre": "elveranoojalanodesaprezca",
+          "descripcion": "MAScarodelahistoria",
+          "cantidad": 10,
+          "valor": 69696
+        }
+      ],
+      "id": 9
+    },
+    {
+      "idUsuario": 1,
+      "fecha": "2023-06-28T00:49:43.563Z",
+      "proveedor": "Productor poco especial secreto internacional fungico",
+      "productos": [
+        {
+          "id": 11,
+          "idUsuario": 1,
+          "nombre": "elveranoojalanodesaprezca",
+          "descripcion": "MAScarodelahistoria",
+          "cantidad": 3,
+          "valor": 2049
+        }
+      ],
+      "id": 10
+    },
+    {
+      "idUsuario": 1,
+      "fecha": "2023-06-28T00:55:06.061Z",
+      "proveedor": "Productor poco especial secreto internacional fungico",
+      "productos": [
+        {
+          "id": 11,
+          "idUsuario": 1,
+          "nombre": "elveranoojalanodesaprezca",
+          "descripcion": "MAScarodelahistoria",
+          "cantidad": 50,
+          "valor": 3000
+        },
+        {
+          "id": 13,
+          "idUsuario": 1,
+          "nombre": "mercedez",
+          "descripcion": "amg clase g 63",
+          "cantidad": 2034,
+          "valor": 100
+        }
+      ],
+      "id": 11
+    },
+    {
+      "idUsuario": 1,
+      "fecha": "2023-06-28T00:59:43.989Z",
+      "proveedor": "Productor poco especial secreto internacional fungico",
+      "productos": [
+        {
+          "id": 12,
+          "idUsuario": 1,
+          "nombre": "maximodecimomeridio",
+          "descripcion": "comandante",
+          "cantidad": 1000,
+          "valor": 10000
+        }
+      ],
+      "id": 12
+    },
+    {
+      "idUsuario": 1,
+      "fecha": "2023-06-28T01:01:03.439Z",
+      "proveedor": "Productor poco especial secreto internacional fungico",
+      "productos": [
+        {
+          "id": 11,
+          "idUsuario": 1,
+          "nombre": "elveranoojalanodesaprezca",
+          "descripcion": "MAScarodelahistoria",
+          "cantidad": 2000,
+          "valor": 5000
+        }
+      ],
+      "id": 13
+    },
+    {
+      "idUsuario": 1,
+      "fecha": "2023-06-28T01:03:20.228Z",
+      "proveedor": "Productor poco especial secreto internacional fungico",
+      "productos": [
+        {
+          "id": 11,
+          "idUsuario": 1,
+          "nombre": "elveranoojalanodesaprezca",
+          "descripcion": "MAScarodelahistoria",
+          "cantidad": 300,
+          "valor": 23123
+        }
+      ],
+      "id": 14
+    }
+  ],
+  "usuarios": [
+    {
+      "id": 1,
+      "nombre": "nombreyanodeejemplo123",
+      "apellido": "apellidoyanodeejemplo",
+      "contrasenia": "contraseña-ejemplo",
+      "fechaDeNacimiento": "2023-06-22",
+      "tipo_usuario": "desarolladorOusuario",
+      "correo": "correo@gmail.com",
+      "numeroCelular": 0
+    },
+    {
+      "nombre": "nombre-ejemploh",
+      "apellido": "apellido-jemploh",
+      "contrasenia": "hhhh",
+      "fechaDeNacimiento": "2023-06-03",
+      "tipo_usuario": "desarolladorOusuariohh",
+      "correo": "correo@gmail.comh",
+      "numeroCelular": 99,
+      "id": 2
+    },
+    {
+      "nombre": "Claudio",
+      "apellido": "Rodriguez  Ortega",
+      "contrasenia": "contrasenia",
+      "fechaDeNacimiento": "2023-06-23",
+      "tipo_usuario": "admin",
+      "correo": "lclcjakdj@gmail.com",
+      "numeroCelular": 98989898,
+      "id": 3
+    },
+    {
+      "nombre": "Plebitas",
+      "apellido": "delinstagram",
+      "contrasenia": "contrasenia",
+      "fechaDeNacimiento": "2023-06-01",
+      "tipo_usuario": "adminadmin",
+      "correo": "sisi@esincreible.cl",
+      "numeroCelular": 98495355,
+      "id": 4
+    }
+  ]
+}
