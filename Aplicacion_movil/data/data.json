@@ -669,6 +669,24 @@
       ],
       "valorTotal": 700000,
       "id": 28
+    },
+    {
+      "idUsuario": 15,
+      "fecha": "2023-07-08T11:03:42.200Z",
+      "proveedor": "revasolo",
+      "productos": [
+        {
+          "id": 20,
+          "idUsuario": 15,
+          "nombre": "patata",
+          "descripcion": "potatoes",
+          "cantidad": 350,
+          "valor": 1800,
+          "total": 630000
+        }
+      ],
+      "valorTotal": 630000,
+      "id": 29
     }
   ],
   "usuarios": [

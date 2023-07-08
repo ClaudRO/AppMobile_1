@@ -11,6 +11,7 @@ import { Iproducto } from '../interfaces/iproducto';
   providedIn: 'root'
 })
 export class SproductosService {
+  private usuariosUrl = 'http://192.168.196.116:3000/usuarios';
   constructor(private http:HttpClient) { }
   
   listarProductos(idUsuario: number): Observable<Iproductos[]> {
@@ -20,18 +21,21 @@ export class SproductosService {
       })
     );
   }
+  
   nombresReptidosProductos(nombreIngresado: string, idUsuario: Number): Observable<boolean> {
-   
-    return this.http.get<Iproductos[]>(`${environment.apiURL}/usuarios`).pipe(
-      map(productos => {
-        const producto = productos.find(u => u.nombre === nombreIngresado && u.id === idUsuario);
-        if (producto) {
+
+    return this.http.get<Iproductos[]>(`${environment.apiURL}/productos`).pipe(
+      map((productos: Iproductos[]) => {
+        const productoEncontrado = productos.find(producto => producto.idUsuario === idUsuario && producto.nombre === nombreIngresado);
+        if (productoEncontrado==undefined) {
           return true;
+        } else {
+          return false;
         }
-        return false;
       })
     );
   }
+  
   
   getProductosUsuario(usuarioId: number): Observable<Iproductos[]> {
     return this.http.get<Iproductos[]>(`${environment.apiURL}/usuarios/${usuarioId}/productos`);
@@ -42,9 +46,7 @@ export class SproductosService {
   getProductoByID(id:Number):Observable<Iproductos>{
     return this.http.get<Iproductos>(`${environment.apiURL}/productos/?id=${id}`)
   }
-  getProductosByIDusuario(idUsuario:Number):Observable<Iproductos[]>{
-    return this.http.get<Iproductos[]>(`${environment.apiURL}/productos/?idusuario=${idUsuario}`)
-  }
+  
   actualizarProducto(producto:any):Observable<Iproductos>{
     return this.http.put<Iproductos>(`${environment.apiURL}/productos/${producto.id}`,producto)
   }

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { AuthGuard } from 'src/services/auth-guard-service.service';
+import { AuthGuard } from 'src/app/services/auth-guard-service.service';
 
 const routes: Routes = [
   {
@@ -106,11 +106,11 @@ const routes: Routes = [
   },
   {
     path: 'login',
-    loadChildren: () => import('./users/login/login.module').then( m => m.LoginPageModule)
+    loadChildren: () => import('./pages/Users/login/login.module').then( m => m.LoginPageModule)
   },
   {
     path: 'register',
-    loadChildren: () => import('./users/register/register.module').then( m => m.RegisterPageModule)
+    loadChildren: () => import('./pages/Users/register/register.module').then( m => m.RegisterPageModule)
   },
   {
     path: 'inicio',
@@ -120,7 +120,7 @@ const routes: Routes = [
   
   {
     path: 'productos',
-    loadChildren: () => import('./productoCrud/productos/productos.module').then( m => m.ProductosPageModule),
+    loadChildren: () => import('./pages/Productos-CRUD/productos/productos.module').then( m => m.ProductosPageModule),
     canActivate: [AuthGuard]
   },
   {
@@ -130,66 +130,58 @@ const routes: Routes = [
  
   {
     path: 'provedores',
-    loadChildren: () => import('./proveedoresCrud/provedores/provedores.module').then( m => m.ProvedoresPageModule)
+    loadChildren: () => import('./pages/Proveedores-CRUD/provedores/provedores.module').then( m => m.ProvedoresPageModule)
   },
   {
     path: 'transaccion',
-    loadChildren: () => import('./transaccionCrud/transaccion/transaccion.module').then( m => m.TransaccionPageModule)
+    loadChildren: () => import('./pages/Transacciones-CRUD/transaccion/transaccion.module').then( m => m.TransaccionPageModule)
   },
   
   {
     path: 'historial',
-    loadChildren: () => import('./transaccionCrud/historial/historial.module').then( m => m.HistorialPageModule)
+    loadChildren: () => import('./pages/Transacciones-CRUD/historial/historial.module').then( m => m.HistorialPageModule)
   },
   
   {
     path: 'error404',
     loadChildren: () => import('./pages/error404/error404.module').then( m => m.Error404PageModule)
   },
-  
-  {
-    path: 'update-transaccion',
-    loadChildren: () => import('./transaccionCrud/update-transaccion/update-transaccion.module').then( m => m.UpdateTransaccionPageModule)
-  },
+
   {
     path: 'detail-transaccion/:id',
-    loadChildren: () => import('./transaccionCrud/detail-transaccion/detail-transaccion.module').then( m => m.DetailTransaccionPageModule)
-  },
-  {
-    path: 'delete-transaccion',
-    loadChildren: () => import('./transaccionCrud/delete-transaccion/delete-transaccion.module').then( m => m.DeleteTransaccionPageModule)
+    loadChildren: () => import('./pages/Transacciones-CRUD/detail-transaccion/detail-transaccion.module').then( m => m.DetailTransaccionPageModule)
   },
   {
     path: 'add-producto',
-    loadChildren: () => import('./productoCrud/add-producto/add-producto.module').then( m => m.AddProductoPageModule)
+    loadChildren: () => import('./pages/Productos-CRUD/add-producto/add-producto.module').then( m => m.AddProductoPageModule)
   },
   {
     path: 'update-producto/:id',
-    loadChildren: () => import('./productoCrud/update-producto/update-producto.module').then( m => m.UpdateProductoPageModule)
+    loadChildren: () => import('./pages/Productos-CRUD/update-producto/update-producto.module').then( m => m.UpdateProductoPageModule)
   },
   {
     path: 'detail-producto/:id',
-    loadChildren: () => import('./productoCrud/detail-producto/detail-producto.module').then( m => m.DetailProductoPageModule)
+    loadChildren: () => import('./pages/Productos-CRUD/detail-producto/detail-producto.module').then( m => m.DetailProductoPageModule)
   },
   {
     path: 'delete-producto/:id',
-    loadChildren: () => import('./productoCrud/delete-producto/delete-producto.module').then( m => m.DeleteProductoPageModule)
+    loadChildren: () => import('./pages/Productos-CRUD/delete-producto/delete-producto.module').then( m => m.DeleteProductoPageModule)
   },
   {
     path: 'add-proveedor',
-    loadChildren: () => import('./proveedoresCrud/add-proveedor/add-proveedor.module').then( m => m.AddProveedorPageModule)
+    loadChildren: () => import('./pages/Proveedores-CRUD/add-proveedor/add-proveedor.module').then( m => m.AddProveedorPageModule)
   },
   {
     path: 'delete-proveedor/:id',
-    loadChildren: () => import('./proveedoresCrud/delete-proveedor/delete-proveedor.module').then( m => m.DeleteProveedorPageModule)
+    loadChildren: () => import('./pages/Proveedores-CRUD/delete-proveedor/delete-proveedor.module').then( m => m.DeleteProveedorPageModule)
   },
   {
     path: 'detail-proveedor/:id',
-    loadChildren: () => import('./proveedoresCrud/detail-proveedor/detail-proveedor.module').then( m => m.DetailProveedorPageModule)
+    loadChildren: () => import('./pages/Proveedores-CRUD/detail-proveedor/detail-proveedor.module').then( m => m.DetailProveedorPageModule)
   },
   {
     path: 'update-proveedor/:id',
-    loadChildren: () => import('./proveedoresCrud/update-proveedor/update-proveedor.module').then( m => m.UpdateProveedorPageModule)
+    loadChildren: () => import('./pages/Proveedores-CRUD/update-proveedor/update-proveedor.module').then( m => m.UpdateProveedorPageModule)
   },
   
 ];

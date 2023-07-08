@@ -20,13 +20,15 @@ export class SproveedoresService {
     );
   }
   nombresReptidosProveedores(nombreIngresado: string, idUsuario: Number): Observable<boolean> {
-    return this.http.get<Iproveedores[]>(`${environment.apiURL}/usuarios`).pipe(
-      map(proveedores => {
-        const proveedor = proveedores.find(u => u.nombre=== nombreIngresado && u.id === idUsuario);
-        if (proveedor) {
+
+    return this.http.get<Iproveedores[]>(`${environment.apiURL}/proveedores`).pipe(
+      map((proveedores: Iproveedores[]) => {
+        const proveedoresEncontrado = proveedores.find(proveedor => proveedor.idUsuario === idUsuario && proveedor.nombre === nombreIngresado);
+        if (proveedoresEncontrado==undefined) {
           return true;
+        } else {
+          return false;
         }
-        return false;
       })
     );
   }

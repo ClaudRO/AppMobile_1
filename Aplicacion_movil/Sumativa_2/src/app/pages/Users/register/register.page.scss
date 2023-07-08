@@ -1,0 +1,20 @@
+ion-checkbox {
+    --size: 32px;
+    --checkbox-background-checked: #15ec7d;
+    text-align: center;
+    padding: 15px;
+    color: white;
+  }
+ion-content {
+    --background: url('../../../../assets/static/vina-san-francisco-de-aguirre-1-1024x614.jpg');
+    
+  }
+  .validation-message {
+    color: rgb(255, 255, 255);
+    
+    font-size: 16px;
+    margin-top: 5px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px; 
+
+  }

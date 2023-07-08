@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CredencialesInicioService } from 'src/services/credenciales-inicio.service';
+import { CredencialesInicioService } from 'src/app/services/credenciales-inicio.service';
 import { Iusuarios } from '../../interfaces/iusuarios';
 import { SUsuariosService } from '../../services/s-usuarios.service';
 
