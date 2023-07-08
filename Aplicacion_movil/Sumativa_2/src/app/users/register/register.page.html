@@ -3,56 +3,67 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>Registro de Usuario: </ion-title>
+    <ion-title style="margin-left: -20px;">Registro de Usuario</ion-title>
+    <ion-buttons slot="end">
+      <ion-back-button text="atras"></ion-back-button>
+    </ion-buttons>
   </ion-toolbar>
+  
 </ion-header>
 
-<ion-content >
-  <form>
+<ion-content>
+  <form [formGroup]="registerForm" (ngSubmit)="crearUsuario()">
     <ion-grid>
+      <div style="text-align:center;color: white">
+            <h3 >Crea tu cuenta</h3>
+          </div>
       <ion-row color="primary" justify-content-center>
         <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
-          <div text-center>
-            <h3 style="color: white;">Crea tu cuenta: </h3>
-          </div>
+          
           <div padding>
             <ion-item lines="full">
-              <ion-input  name="name" type="text" placeholder="Nombre" required [(ngModel)]="newUsuario.nombre"></ion-input>
+              <ion-input formControlName="nombre" type="text" placeholder="Nombre" required></ion-input>
             </ion-item>
             <ion-item>
-              <ion-input  name="apellido" type="text" placeholder="Apellido" required [(ngModel)]="newUsuario.apellido"></ion-input>
+              <ion-input formControlName="apellido" type="text" placeholder="Apellido" required></ion-input>
             </ion-item>
             <ion-item>
-              <ion-input  name="fecha" type="date" placeholder="fecha de nacimiento"required [(ngModel)]="newUsuario.fechaDeNacimiento"></ion-input>
+              <ion-input formControlName="fechaDeNacimiento" type="date" placeholder="Fecha de nacimiento" required></ion-input>
             </ion-item>
             <ion-item>
-              <ion-input name="email" type="email" placeholder="tu@email.com" required [(ngModel)]="newUsuario.correo"></ion-input>
+              <ion-input formControlName="correo" type="email" placeholder="Correo electrónico" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-input formControlName="contrasenia" type="password" placeholder="Contraseña" required 
+                         (ionBlur)="hidePasswordValidationMessage()" (ionFocus)="showPasswordValidationMessage()"></ion-input>
+            </ion-item>
+            <div *ngIf="showPasswordValidation" class="validation-message">
+              La Contraseña debe contener números, caracteres y al menos un signo [!@#$%^&*()_+-], además de tener una longitud mínima de 8 caracteres.
+            </div>
+            
+            <ion-item>
+              <ion-input formControlName="repetir_contrasenia" type="password" placeholder="Repetir contraseña" required></ion-input>
             </ion-item>
             <ion-item>
-              <ion-input name="password" type="password" placeholder="contraseña" required [(ngModel)]="newUsuario.contrasenia"></ion-input>
+             
+              <ion-select formControlName="tipo_usuario" placeholder="Tipo de usuario">
+                <ion-select-option value="usuario">Usuario</ion-select-option>
+                <ion-select-option value="admin">Desarollador</ion-select-option>
+              </ion-select>
             </ion-item>
             <ion-item>
-              <ion-input name="tipoUsuario" type="text" placeholder="tipo de usuario" required [(ngModel)]="newUsuario.tipo_usuario" ></ion-input>
-            </ion-item>
-            <ion-item>
-              <ion-input name="number" type="number" placeholder="celular" required [(ngModel)]="newUsuario.numeroCelular" ></ion-input>
+              <ion-input formControlName="numeroCelular" type="number" placeholder="Celular"></ion-input>
             </ion-item>
           </div>
-         
         </ion-col>
       </ion-row>
       <ion-row>
         <ion-col>
-            <ion-button (click)="crearUsuario()" expand="block" color="success" routerLink="/login">Registrarse</ion-button>
+          <ion-button type="submit" expand="block" color="success" [disabled]="!registerForm.valid">Registrarse</ion-button>
         </ion-col>
       </ion-row>
     </ion-grid>
-    
   </form>
-
-   
-  <ion-checkbox >¿Esta deacuedo con las condiciones ? (opcional) </ion-checkbox>
-    
-  
 
 </ion-content>

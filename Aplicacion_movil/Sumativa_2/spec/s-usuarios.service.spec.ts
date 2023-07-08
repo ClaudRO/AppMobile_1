@@ -1,8 +1,9 @@
 import { TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
-import { SUsuariosService } from './s-usuarios.service';
-import { Iusuarios } from '../interfaces/iusuarios';
+
 import { environment } from 'src/environments/environment';
+import { SUsuariosService } from 'src/app/services/s-usuarios.service';
+import { Iusuarios } from 'src/app/interfaces/iusuarios';
 
 describe('SUsuariosService', () => {
   let service: SUsuariosService;

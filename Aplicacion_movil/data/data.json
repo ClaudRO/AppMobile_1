@@ -55,6 +55,24 @@
       "nombre": "pencil",
       "descripcion": "",
       "id": 11
+    },
+    {
+      "idUsuario": 7,
+      "nombre": "joaquin",
+      "descripcion": "cualquiera",
+      "id": 12
+    },
+    {
+      "idUsuario": 15,
+      "nombre": "revasolo",
+      "descripcion": "suavesito",
+      "id": 13
+    },
+    {
+      "idUsuario": 15,
+      "nombre": "renato",
+      "descripcion": "",
+      "id": 14
     }
   ],
   "productos": [
@@ -156,6 +174,54 @@
       "cantidad": 0,
       "valor": 0,
       "id": 17
+    },
+    {
+      "idUsuario": 7,
+      "nombre": "palta",
+      "descripcion": "grande",
+      "cantidad": 0,
+      "valor": 0,
+      "id": 18
+    },
+    {
+      "idUsuario": 7,
+      "nombre": "palta2",
+      "descripcion": "peor calidad",
+      "cantidad": 0,
+      "valor": 0,
+      "id": 19
+    },
+    {
+      "idUsuario": 15,
+      "nombre": "patata",
+      "descripcion": "potatoes",
+      "cantidad": 0,
+      "valor": 0,
+      "id": 20
+    },
+    {
+      "idUsuario": 15,
+      "nombre": "naranjas",
+      "descripcion": "dulces",
+      "cantidad": 0,
+      "valor": 0,
+      "id": 21
+    },
+    {
+      "idUsuario": 15,
+      "nombre": "cocoa",
+      "descripcion": "",
+      "cantidad": 0,
+      "valor": 0,
+      "id": 22
+    },
+    {
+      "idUsuario": 15,
+      "nombre": "Zanahoria primera",
+      "descripcion": "zanahorias de mejor claidady mas glande",
+      "cantidad": 0,
+      "valor": 0,
+      "id": 23
     }
   ],
   "transacciones": [
@@ -334,6 +400,275 @@
         }
       ],
       "id": 14
+    },
+    {
+      "idUsuario": 7,
+      "fecha": "2023-06-28T03:31:11.059Z",
+      "proveedor": "joaquin",
+      "productos": [
+        {
+          "id": 18,
+          "idUsuario": 7,
+          "nombre": "palta",
+          "descripcion": "grande",
+          "cantidad": 10,
+          "valor": 1000
+        }
+      ],
+      "id": 15
+    },
+    {
+      "idUsuario": 15,
+      "fecha": "2023-07-06T00:26:43.699Z",
+      "proveedor": "revasolo",
+      "productos": [
+        {
+          "id": 20,
+          "idUsuario": 15,
+          "nombre": "patata",
+          "descripcion": "potatoes",
+          "cantidad": 20,
+          "valor": 2000
+        }
+      ],
+      "id": 16
+    },
+    {
+      "idUsuario": 15,
+      "fecha": "2023-07-06T05:58:16.846Z",
+      "proveedor": "revasolo",
+      "productos": [
+        {
+          "id": 20,
+          "idUsuario": 15,
+          "nombre": "patata",
+          "descripcion": "potatoes",
+          "cantidad": 20,
+          "valor": 500
+        },
+        {
+          "id": 21,
+          "idUsuario": 15,
+          "nombre": "naranjas",
+          "descripcion": "dulces",
+          "cantidad": 1000,
+          "valor": 100
+        }
+      ],
+      "id": 17
+    },
+    {
+      "idUsuario": 15,
+      "fecha": "2023-07-06T05:58:16.846Z",
+      "proveedor": "",
+      "productos": [
+        {
+          "id": 20,
+          "idUsuario": 15,
+          "nombre": "patata",
+          "descripcion": "potatoes",
+          "cantidad": 0,
+          "valor": 0
+        }
+      ],
+      "id": 18
+    },
+    {
+      "idUsuario": 15,
+      "fecha": "2023-07-06T06:34:52.336Z",
+      "proveedor": "revasolo",
+      "productos": [
+        {
+          "id": 20,
+          "idUsuario": 15,
+          "nombre": "patata",
+          "descripcion": "potatoes",
+          "cantidad": 0,
+          "valor": 0
+        }
+      ],
+      "id": 19
+    },
+    {
+      "idUsuario": 15,
+      "fecha": "2023-07-06T06:51:31.358Z",
+      "proveedor": "revasolo",
+      "productos": [
+        {
+          "id": 20,
+          "idUsuario": 15,
+          "nombre": "patata",
+          "descripcion": "potatoes",
+          "cantidad": 10,
+          "valor": 200
+        }
+      ],
+      "id": 20
+    },
+    {
+      "idUsuario": 15,
+      "fecha": "2023-07-06T07:02:04.846Z",
+      "proveedor": "revasolo",
+      "productos": [
+        {
+          "id": 20,
+          "idUsuario": 15,
+          "nombre": "patata",
+          "descripcion": "potatoes",
+          "cantidad": 10,
+          "valor": 20
+        }
+      ],
+      "id": 21
+    },
+    {
+      "idUsuario": 15,
+      "fecha": "2023-07-06T10:11:17.500Z",
+      "proveedor": "revasolo",
+      "productos": [
+        {
+          "id": 20,
+          "idUsuario": 15,
+          "nombre": "patata",
+          "descripcion": "potatoes",
+          "cantidad": 10,
+          "valor": 100,
+          "total": 0
+        }
+      ],
+      "id": 22
+    },
+    {
+      "idUsuario": 15,
+      "fecha": "2023-07-06T10:14:20.293Z",
+      "proveedor": "revasolo",
+      "productos": [
+        {
+          "id": 20,
+          "idUsuario": 15,
+          "nombre": "patata",
+          "descripcion": "potatoes",
+          "cantidad": 200,
+          "valor": 3000,
+          "total": 0
+        },
+        {
+          "id": 23,
+          "idUsuario": 15,
+          "nombre": "Zanahoria primera",
+          "descripcion": "zanahorias de mejor claidady mas glande",
+          "cantidad": 100,
+          "valor": 2200,
+          "total": 0
+        }
+      ],
+      "id": 23
+    },
+    {
+      "idUsuario": 15,
+      "fecha": "2023-07-06T10:18:16.426Z",
+      "proveedor": "revasolo",
+      "productos": [
+        {
+          "id": 20,
+          "idUsuario": 15,
+          "nombre": "patata",
+          "descripcion": "potatoes",
+          "cantidad": 10,
+          "valor": 1000,
+          "total": 10000
+        }
+      ],
+      "id": 24
+    },
+    {
+      "idUsuario": 15,
+      "fecha": "2023-07-06T10:28:02.562Z",
+      "proveedor": "revasolo",
+      "productos": [
+        {
+          "id": 20,
+          "idUsuario": 15,
+          "nombre": "patata",
+          "descripcion": "potatoes",
+          "cantidad": 100,
+          "valor": 3400,
+          "total": 340000
+        },
+        {
+          "id": 23,
+          "idUsuario": 15,
+          "nombre": "Zanahoria primera",
+          "descripcion": "zanahorias de mejor claidady mas glande",
+          "cantidad": 100,
+          "valor": 2000,
+          "total": 200000
+        }
+      ],
+      "id": 25
+    },
+    {
+      "idUsuario": 15,
+      "fecha": "2023-07-07T03:01:59.736Z",
+      "proveedor": "renato",
+      "productos": [
+        {
+          "id": 21,
+          "idUsuario": 15,
+          "nombre": "naranjas",
+          "descripcion": "dulces",
+          "cantidad": 1000,
+          "valor": 1000,
+          "total": 1000000
+        }
+      ],
+      "valorTotal": 1000000,
+      "id": 26
+    },
+    {
+      "idUsuario": 15,
+      "fecha": "2023-07-08T06:03:05.628Z",
+      "proveedor": "renato",
+      "productos": [
+        {
+          "id": 21,
+          "idUsuario": 15,
+          "nombre": "naranjas",
+          "descripcion": "dulces",
+          "cantidad": 300,
+          "valor": 2400,
+          "total": 720000
+        }
+      ],
+      "valorTotal": 720000,
+      "id": 27
+    },
+    {
+      "idUsuario": 15,
+      "fecha": "2023-07-08T06:06:07.547Z",
+      "proveedor": "revasolo",
+      "productos": [
+        {
+          "id": 21,
+          "idUsuario": 15,
+          "nombre": "naranjas",
+          "descripcion": "dulces",
+          "cantidad": 100,
+          "valor": 3000,
+          "total": 300000
+        },
+        {
+          "id": 23,
+          "idUsuario": 15,
+          "nombre": "Zanahoria primera",
+          "descripcion": "zanahorias de mejor claidady mas glande",
+          "cantidad": 200,
+          "valor": 2000,
+          "total": 400000
+        }
+      ],
+      "valorTotal": 700000,
+      "id": 28
     }
   ],
   "usuarios": [
@@ -376,6 +711,116 @@
       "correo": "sisi@esincreible.cl",
       "numeroCelular": 98495355,
       "id": 4
+    },
+    {
+      "nombre": "DADSASD",
+      "apellido": "DASDASDSA",
+      "fechaDeNacimiento": "1998-12-12",
+      "correo": "corereoo@gmail.com",
+      "contrasenia": "adadasdasd",
+      "tipo_usuario": "asdadasdas",
+      "numeroCelular": 987987987,
+      "id": 5
+    },
+    {
+      "nombre": "adasdas",
+      "apellido": "dfgdfgdf",
+      "contrasenia": "sklfjasjkfhk",
+      "fechaDeNacimiento": "1998-12-12T00:00:00.000Z",
+      "tipo_usuario": "ljhkjhkjh",
+      "correo": "ccdcldkfj@gmail.com",
+      "numeroCelular": 98798798,
+      "id": 6
+    },
+    {
+      "nombre": "sdajsdalksjd",
+      "apellido": "lkjsdlkfdsjflk",
+      "contrasenia": "kdjaskjfhdlid",
+      "fechaDeNacimiento": "1998-12-12",
+      "tipo_usuario": "lksjdfdlkjgdskl",
+      "correo": "kfjdslkfsjk@gmail.com",
+      "numeroCelular": 980956785607,
+      "id": 7
+    },
+    {
+      "nombre": "sabiendo",
+      "apellido": "asdasd",
+      "contrasenia": "12345",
+      "fechaDeNacimiento": "2000-12-12",
+      "tipo_usuario": "asdasdsa",
+      "correo": "yonoati@gmail.com",
+      "numeroCelular": 456456456,
+      "id": 8
+    },
+    {
+      "nombre": "quienesesamorra",
+      "apellido": "beiaellasabequeestawena",
+      "contrasenia": "12345",
+      "fechaDeNacimiento": "1990-12-12",
+      "tipo_usuario": "dadasd",
+      "correo": "yonoati2@gmail.com",
+      "numeroCelular": 3535345,
+      "id": 9
+    },
+    {
+      "nombre": "mepongolosguantes",
+      "apellido": "entroatucasa",
+      "contrasenia": "contrasenia335$",
+      "fechaDeNacimiento": "2000-12-12",
+      "tipo_usuario": "tueremigata",
+      "correo": "mepongolosguantes@gmail.com",
+      "numeroCelular": 9898798798,
+      "id": 10
+    },
+    {
+      "nombre": "pepe",
+      "apellido": "erer",
+      "contrasenia": "asdasd123_",
+      "fechaDeNacimiento": "1996-06-06",
+      "tipo_usuario": "adad",
+      "correo": "lclcjaghkdj@gmail.com",
+      "numeroCelular": 5646456,
+      "id": 11
+    },
+    {
+      "nombre": "senota",
+      "apellido": "asdadas",
+      "contrasenia": "sdsds34343_",
+      "fechaDeNacimiento": "2000-12-12",
+      "tipo_usuario": "usuario",
+      "correo": "adkadlaskd@gmail.com",
+      "numeroCelular": 6456456456,
+      "id": 12
+    },
+    {
+      "nombre": "ahorasi?",
+      "apellido": "nose",
+      "contrasenia": "lacontrasenia1234$",
+      "fechaDeNacimiento": "1998-11-12",
+      "tipo_usuario": "usuario",
+      "correo": "coorero@gmail.com",
+      "numeroCelular": "",
+      "id": 13
+    },
+    {
+      "nombre": "prueba",
+      "apellido": "pruebaw",
+      "contrasenia": "contrasenia1$",
+      "fechaDeNacimiento": "1999-10-10",
+      "tipo_usuario": "usuario",
+      "correo": "p@g.com",
+      "numeroCelular": "",
+      "id": 14
+    },
+    {
+      "nombre": "despasdas",
+      "apellido": "asdfsf",
+      "contrasenia": "95054459a$",
+      "fechaDeNacimiento": "2003-02-12",
+      "tipo_usuario": "usuario",
+      "correo": "dadsd@gmail.co",
+      "numeroCelular": 2342343,
+      "id": 15
     }
   ]
 }

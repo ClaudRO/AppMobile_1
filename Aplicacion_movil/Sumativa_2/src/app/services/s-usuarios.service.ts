@@ -19,11 +19,26 @@ export class SUsuariosService {
       })
     );
   }
+  listarUser():Observable<Iusuarios>{
+    return this.http.get<Iusuarios>(`${environment.apiURL}/usuarios`)
+  }
+  validarCorreo(correo:string):Observable<boolean>{
+    return this.http.get<Iusuarios[]>(`${environment.apiURL}/usuarios`).pipe(
+      map(usuarios => {
+        const usuario1= usuarios.find(u => u.correo === correo);
+        if(usuario1){
+          return false;
+        }else{
+          return true;
+        }
+      })
+    );
+  }
   
   crearUsuario(newUsuario:Iusuario):Observable<Iusuario>{
     return this.http.post<Iusuario>(`${environment.apiURL}/usuarios`,newUsuario)
   }
-  getProductoByID(id:Number):Observable<Iusuarios>{
+  getUsuarioByID(id:Number):Observable<Iusuarios>{
     return this.http.get<Iusuarios>(`${environment.apiURL}/usuarios/?id=${id}`)
   }
   actualizarUsuario(usuario:any):Observable<Iusuarios>{

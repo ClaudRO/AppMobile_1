@@ -1,19 +1,23 @@
 <ion-header [translucent]="true">
+  
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>Iniciar Sesión</ion-title>
+    <ion-title slot="start" style="margin-left: -20px;">Iniciar Sesión</ion-title>
+    
   </ion-toolbar>
 </ion-header>
 <ion-content padding>
   <form #form="ngForm" (ngSubmit)="login()">
     <ion-grid>
+      <div id="container2">
+          <h3>Ingresa a tu Cuenta</h3>
+        </div>
       <ion-row color="primary" justify-content-center>
+        
         <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
-          <div text-center>
-            <h3 style="color: white;">Ingresa a tu Cuenta</h3>
-          </div>
+          
           <div padding>
             <ion-item>
               <ion-label position="floating">Correo electrónico</ion-label>
@@ -36,6 +40,11 @@
     </ion-grid>
   </form>
   <div id="container">
-    <p style="color: white; font-size: large;">¿No te has registrado aún?<a href="register" style="padding: 5px;">Registrarse</a></p>
+    <p style="color: white; font-size: large; display: inline-block; margin: 0;">
+      ¿No te has registrado aún?
+    </p>
+    <ion-button routerLink="/register" style="padding: 5px; margin-left: 5px; vertical-align: middle;">
+      Registrarse
+    </ion-button>
   </div>
 </ion-content>

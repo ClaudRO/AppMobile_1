@@ -1,8 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, map } from 'rxjs';
+import { Iproductos } from 'src/app/interfaces/iproductos';
 import { Iusuario } from 'src/app/interfaces/iusuario';
 import { Iusuarios } from 'src/app/interfaces/iusuarios';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +15,6 @@ export class CredencialesInicioService {
   private nombreUsuario: string = ''; // Cambio aquí
   private id: Number=NaN;
 
-  private usuariosUrl = 'http://192.168.1.7:3000/usuarios';
 
   constructor(private http: HttpClient) { }
 
@@ -41,7 +42,7 @@ export class CredencialesInicioService {
   }
 
   validarCredenciales(correo: string, contrasenia: string): Observable<boolean> {
-    return this.http.get<Iusuarios[]>(this.usuariosUrl).pipe(
+    return this.http.get<Iusuarios[]>(`${environment.apiURL}/usuarios`).pipe(
       map(usuarios => {
         const usuario = usuarios.find(u => u.correo === correo && u.contrasenia === contrasenia);
         if (usuario) {
@@ -52,6 +53,8 @@ export class CredencialesInicioService {
       })
     );
   }
+  
+  
  
 
   

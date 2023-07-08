@@ -18,7 +18,8 @@ export class UpdateProductoPage {
     nombre:"",
     descripcion:"",
     cantidad: NaN,
-  	valor: NaN
+  	valor: NaN,
+    total:NaN
   }
 
   constructor(
@@ -52,6 +53,8 @@ export class UpdateProductoPage {
           descripcion:resp[0].descripcion,
           cantidad:resp[0].cantidad,
           valor:resp[0].valor,
+          total:resp[0].total
+
         }
       }
     )
@@ -67,9 +70,22 @@ export class UpdateProductoPage {
     }
   
   updateProducto(){
-    this.mostrarNotificacion('El Producto se guardó exitosamente');
-    this.productoServ.actualizarProducto(this.producto).subscribe()
-    this.router.navigateByUrl("/productos")
+    this.productoServ.nombresReptidosProductos(this.producto.nombre,this.idusuario).subscribe(async (correoValido: boolean) => 
+      {
+        if(correoValido){
+          this.mostrarNotificacion('El Producto se guardó exitosamente');
+          this.productoServ.actualizarProducto(this.producto).subscribe()
+          this.router.navigateByUrl("/productos")
+        }else{
+          const toast = await this.toastController.create({
+            message: 'Lo sentimos, el nombre ingresado para el producto ya existe, escoja un nombre distinto.',
+            duration: 3000,
+            position: 'bottom',
+            color: 'danger',
+          });
+          toast.present();
+        }
+      });
   }
 
 }

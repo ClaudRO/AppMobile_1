@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
 import { Iproveedor } from 'src/app/interfaces/iproveedor';
 import { SproveedoresService } from 'src/app/services/sproveedores.service';
@@ -19,7 +20,8 @@ export class AddProveedorPage implements OnInit {
   constructor(
     private proveedorServ:SproveedoresService,
     private credenciales:CredencialesInicioService,
-    private toastController: ToastController
+    private toastController: ToastController,
+    private router: Router
 
   ) { }
 
@@ -30,15 +32,33 @@ export class AddProveedorPage implements OnInit {
     const toast = await this.toastController.create({
       message: mensaje,
       duration: 2000, // Duración en milisegundos
-      position: 'top', // Posición de la notificación
-      color: "tertiary"
+      position: 'middle', // Posición de la notificación
+      color: "danger"
     });
     toast.present();
   }
   crearProveedor(){
-    this.proveedorServ.crearProveedor(this.newProveedor).subscribe()
-    this.mostrarNotificacion('El Proveedor se guardó exitosamente');
-
+    if (!this.newProveedor.nombre) {
+      this.mostrarNotificacion('El nombre del proveedor no puede estar vacío.');
+      return;
+    }else{
+      this.proveedorServ.nombresReptidosProveedores(this.newProveedor.nombre,this.credenciales.getIdUsuario()).subscribe(async (correoValido: boolean) => 
+      {
+        if(correoValido){
+          this.proveedorServ.crearProveedor(this.newProveedor).subscribe();
+          this.mostrarNotificacion('El Proveedor se guardó exitosamente');
+          this.router.navigateByUrl('/provedores');
+        }else{
+          const toast = await this.toastController.create({
+            message: 'Lo sentimos, el nombre ingresado para el proveedor ya existe, escoja un nombre distinto.',
+            duration: 3000,
+            position: 'bottom',
+            color: 'danger',
+          });
+          toast.present();
+        }
+      });
+    }
   }
   getCrendenciales(){
     this.newProveedor.idUsuario=this.credenciales.getIdUsuario()

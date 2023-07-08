@@ -5,4 +5,5 @@ export interface Iproductos {
 	descripcion:string
 	cantidad: number;
   	valor: number;
+	total:number;
 }

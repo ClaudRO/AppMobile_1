@@ -66,10 +66,23 @@ export class UpdateProveedorPage{
     toast.present();
   }
   updateProveedor(){
-    this.mostrarNotificacion('El Proveedor se actualizó exitosamente');
+    this.proveedorServ.nombresReptidosProveedores(this.proveedor.nombre,this.credenciales.getIdUsuario()).subscribe(async (correoValido: boolean) => 
+      {
+        if(correoValido){
+          this.mostrarNotificacion('El Proveedor se actualizó exitosamente');
+          this.proveedorServ.actualizarProveedor(this.proveedor).subscribe()
+          this.router.navigateByUrl("/provedores")
+        }else{
+          const toast = await this.toastController.create({
+            message: 'Lo sentimos, el nombre ingresado para el proveedor ya existe, escoja un nombre distinto.',
+            duration: 3000,
+            position: 'bottom',
+            color: 'danger',
+          });
+          toast.present();
+        }
 
-    this.proveedorServ.actualizarProveedor(this.proveedor).subscribe()
-    this.router.navigateByUrl("/provedores")
+      });
   }
 
 }

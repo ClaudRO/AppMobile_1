@@ -7,6 +7,7 @@ export interface Itransacciones {
   fecha: Date;
   proveedor: string;
   productos: Iproductos[];
+  valorTotal:Number;
   
   
 }

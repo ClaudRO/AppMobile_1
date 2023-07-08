@@ -12,10 +12,23 @@ import { Iproducto } from '../interfaces/iproducto';
 })
 export class SproductosService {
   constructor(private http:HttpClient) { }
+  
   listarProductos(idUsuario: number): Observable<Iproductos[]> {
     return this.http.get<Iproductos[]>(`${environment.apiURL}/productos`).pipe(
       map((productos: Iproductos[]) => {
         return productos.filter(producto => producto.idUsuario === idUsuario);
+      })
+    );
+  }
+  nombresReptidosProductos(nombreIngresado: string, idUsuario: Number): Observable<boolean> {
+   
+    return this.http.get<Iproductos[]>(`${environment.apiURL}/usuarios`).pipe(
+      map(productos => {
+        const producto = productos.find(u => u.nombre === nombreIngresado && u.id === idUsuario);
+        if (producto) {
+          return true;
+        }
+        return false;
       })
     );
   }

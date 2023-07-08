@@ -4,4 +4,5 @@ export interface Iproducto {
 	descripcion:string
     cantidad: number;
   	valor: number;
+    total:number;
 }

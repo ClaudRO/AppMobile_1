@@ -9,7 +9,6 @@ import { Iproveedor } from '../interfaces/iproveedor';
   providedIn: 'root'
 })
 export class SproveedoresService {
-
   constructor(private http:HttpClient) { }
   
   
@@ -17,6 +16,17 @@ export class SproveedoresService {
     return this.http.get<Iproveedores[]>(`${environment.apiURL}/proveedores`).pipe(
       map((proveedores: Iproveedores[]) => {
         return proveedores.filter(proveedores => proveedores.idUsuario === idUsuario);
+      })
+    );
+  }
+  nombresReptidosProveedores(nombreIngresado: string, idUsuario: Number): Observable<boolean> {
+    return this.http.get<Iproveedores[]>(`${environment.apiURL}/usuarios`).pipe(
+      map(proveedores => {
+        const proveedor = proveedores.find(u => u.nombre=== nombreIngresado && u.id === idUsuario);
+        if (proveedor) {
+          return true;
+        }
+        return false;
       })
     );
   }

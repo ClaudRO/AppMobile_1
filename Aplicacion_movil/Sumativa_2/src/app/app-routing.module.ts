@@ -69,12 +69,6 @@ const routes: Routes = [
     redirectTo: 'delete-producto/:id',
     pathMatch: 'full'
   },
-
-  {
-    path: 'folder',
-    redirectTo: 'folder',
-    pathMatch: 'full'
-  },
   {
     path: 'add-proveedor',
     redirectTo: 'add-proveedor',
@@ -106,19 +100,9 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'add-transaccion',
-    redirectTo: 'detail-transaccion',
-    pathMatch: 'full'
-  },
-  {
     path: '**',
     redirectTo: 'error404',
     pathMatch: 'full'
-  },
-  
-  {
-    path: 'folder/:id',
-    loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
   },
   {
     path: 'login',
@@ -130,46 +114,39 @@ const routes: Routes = [
   },
   {
     path: 'inicio',
-    loadChildren: () => import('./inicio/inicio.module').then( m => m.InicioPageModule)
+    loadChildren: () => import('./pages/inicio/inicio.module').then( m => m.InicioPageModule)
   },
  
   
   {
     path: 'productos',
-    loadChildren: () => import('./productos/productos.module').then( m => m.ProductosPageModule),
+    loadChildren: () => import('./productoCrud/productos/productos.module').then( m => m.ProductosPageModule),
     canActivate: [AuthGuard]
   },
   {
     path: 'mis-datos',
-    loadChildren: () => import('./mis-datos/mis-datos.module').then( m => m.MisDatosPageModule)
+    loadChildren: () => import('./pages/mis-datos/mis-datos.module').then( m => m.MisDatosPageModule)
   },
  
   {
     path: 'provedores',
-    loadChildren: () => import('./provedores/provedores.module').then( m => m.ProvedoresPageModule)
+    loadChildren: () => import('./proveedoresCrud/provedores/provedores.module').then( m => m.ProvedoresPageModule)
   },
   {
     path: 'transaccion',
-    loadChildren: () => import('./transaccion/transaccion.module').then( m => m.TransaccionPageModule)
+    loadChildren: () => import('./transaccionCrud/transaccion/transaccion.module').then( m => m.TransaccionPageModule)
   },
   
   {
     path: 'historial',
-    loadChildren: () => import('./historial/historial.module').then( m => m.HistorialPageModule)
+    loadChildren: () => import('./transaccionCrud/historial/historial.module').then( m => m.HistorialPageModule)
   },
   
   {
     path: 'error404',
-    loadChildren: () => import('./error404/error404.module').then( m => m.Error404PageModule)
+    loadChildren: () => import('./pages/error404/error404.module').then( m => m.Error404PageModule)
   },
-  {
-    path: 'lis-transaccion',
-    loadChildren: () => import('./transaccionCrud/lis-transaccion/lis-transaccion.module').then( m => m.LisTransaccionPageModule)
-  },
-  {
-    path: 'add-transaccion',
-    loadChildren: () => import('./transaccionCrud/add-transaccion/add-transaccion.module').then( m => m.AddTransaccionPageModule)
-  },
+  
   {
     path: 'update-transaccion',
     loadChildren: () => import('./transaccionCrud/update-transaccion/update-transaccion.module').then( m => m.UpdateTransaccionPageModule)
