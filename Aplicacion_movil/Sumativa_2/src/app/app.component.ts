@@ -14,6 +14,6 @@ export class AppComponent {
     { title: 'Mis datos', url: 'mis-datos', icon: 'person' },
     { title: 'Login', url: 'login', icon: 'log-in' },
   ];
-  public labels = [ 'Friends', 'Notes', 'Work'];
+  
   constructor() {}
 }
